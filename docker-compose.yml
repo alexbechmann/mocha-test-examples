@@ -1,4 +1,8 @@
 selenium-chrome-standalone:
   image: selenium/standalone-chrome
+  volumes:
+    - "/dev/shm:/dev/shm"
   expose:
-    - 44444
+    - 4444
+  ports:
+    - "4444:4444"
