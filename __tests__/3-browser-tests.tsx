@@ -1,7 +1,7 @@
 import { Builder, By, WebDriver, Key } from 'selenium-webdriver';
 import { expect } from 'chai';
 
-describe('browser tests', () => {
+describe.skip('browser tests', () => {
   const browsers = ['firefox', 'chrome']; // 'internet explorer'
 
   browsers.forEach((browser) => {
