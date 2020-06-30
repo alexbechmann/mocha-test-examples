@@ -1,0 +1,38 @@
+{
+  "name": "npm-tests",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require jsdom-global/register --require ts-node-test-register --require=dotenv/config __tests__/**/*test*.ts*",
+    "test:watch": "mocha --require jsdom-global/register -require ts-node-test-register --require=dotenv/config __tests__/**/*test*.ts --watch-extensions ts,tsx --watch-files __tests__/** __tests__/**/*test*.ts* --watch --timeout 10s"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@danfoss/zally-lint": "^0.1.4",
+    "@testing-library/react": "^10.4.3",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.2",
+    "@types/react": "^16.9.41",
+    "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "chai-openapi-response-validator": "^0.9.1",
+    "dotenv": "^8.2.0",
+    "iso-3166-1-alpha-2": "^1.0.0",
+    "jsdom": "^16.2.2",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^7.1.1",
+    "mocha-junit-reporter": "^1.23.3",
+    "npm-run-all": "^4.1.5",
+    "querystring": "^0.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "ts-node": "^8.9.0",
+    "ts-node-test-register": "^8.0.1",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {}
+}
