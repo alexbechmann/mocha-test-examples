@@ -7,7 +7,7 @@ describe.skip('browser tests', () => {
   browsers.forEach((browser) => {
     let driver: WebDriver;
 
-    before(async () => {
+    beforeEach(async () => {
       driver = await new Builder().forBrowser(browser).build();
     });
 
@@ -33,19 +33,7 @@ describe.skip('browser tests', () => {
       expect(style).to.equal('display: none;');
     });
 
-    // it('First search result is ', async () => {
-    //   driver.navigate().to('https://www.danfoss.com/en/');
-
-    //   const searchInputElement = await driver.findElement(By.id('react-select-2-input'));
-    //   searchInputElement.sendKeys('valve');
-    //   searchInputElement.sendKeys(Key.ENTER);
-
-    //   const resultTitles = await driver.findElements(By.className('tile__text-title'));
-    //   const firstResultText = await resultTitles[0].getText();
-    //   expect(firstResultText).to.equal('Danfoss Dynamic valve™');
-    // });
-
-    after(async () => {
+    afterEach(async () => {
       await driver?.close();
     });
   });
