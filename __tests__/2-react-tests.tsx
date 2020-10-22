@@ -16,7 +16,7 @@ describe.skip('react tests - demo component', () => {
     expect(state.count).to.equal(2);
   });
 
-  it.skip('Click increments the counter', async () => {
+  it('Click increments the counter', async () => {
     const { debug, container } = render(<DemoComponent />);
     const incrementButton = await findByText(container, 'Increment');
 
@@ -34,15 +34,13 @@ describe.skip('react tests - demo component', () => {
 });
 
 function DemoComponent() {
-  const [count, setCount] = useState(0);
-  // const [{ count }, dispatch] = useReducer(countReducer, { count: 0 });
+  const [{ count }, dispatch] = useReducer(countReducer, { count: 0 });
   return (
     <div data-testid="demo-component">
       <p data-testid="status">Count: {count}</p>
       <a
         onClick={() => {
-          setCount(count + 2);
-          // dispatch({ type: 'INCREMENT' });
+          dispatch({ type: 'INCREMENT' });
         }}
       >
         Increment

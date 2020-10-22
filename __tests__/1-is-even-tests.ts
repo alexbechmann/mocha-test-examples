@@ -5,12 +5,12 @@ function isEven(number: number) {
 }
 
 describe.skip('Is even tests', () => {
-  it('returns a boolean', () => {
+  it('returns false for odd number', () => {
     const result = isEven(3);
-    expect(typeof result).to.equal('boolean');
+    expect(result).to.equal(false);
   });
 
-  const evenNumbers = [2, 4, 6, 8, 10, 12, 12, 16, 248, 10308, 124882, 278];
+  const evenNumbers = [2, 4, 6, 7, 10, 12, 12, 16, 248, 10308, 124882, 278];
 
   evenNumbers.forEach((evenNumber) => {
     it(`${evenNumber} is even`, () => {
